@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | [Challenge Name Here]</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+    @import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-rounded/css/uicons-bold-rounded.css');
+
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Rubik", sans-serif;
+    }
+
+    body,
+    html {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .cool-bg {
+      width: 550px;
+      height: 85%;
+      background-image: linear-gradient(-120deg, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+      border-bottom-left-radius: 500px;
+      border-bottom-right-radius: 500px;
+      position: absolute;
+      left: -10%;
+    }
+
+    .mobile {
+      width: 280px;
+      height: fit-content;
+      background-color: white;
+      border-radius: 30px;
+      box-shadow: 0px 0px 80px 10px rgba(0, 0, 0, 0.06);
+      position: absolute;
+      left: 300px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      border: 10px solid white;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      pointer-events: none;
+
+    }
+
+    .action-bar {
+      width: inherit;
+      height: 50px;
+      position: absolute;
+      top: 0;
+      padding-top: 30px;
+      background: linear-gradient(-120deg, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 8px;
+      color: white;
+      box-shadow: 0px 5px 20px 10px rgba(0, 0, 0, 0.05);
+
+    }
+
+    .notch {
+      width: 50%;
+      height: 25px;
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      background-color: white;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+
+    .action-bar img {
+      width: 28px;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+    .details {
+      height: min-content;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .name {
+      font-size: 0.85rem;
+      font-weight: 400;
+    }
+
+    .status {
+      font-size: 0.6rem;
+      font-weight: 300;
+      color: hsl(276, 100%, 81%);
+      padding-top: 3px;
+    }
+
+    .lb {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      margin-left: 10px;
+    }
+
+    .i {
+      font-size: 0.6rem;
+      margin-right: 10px;
+    }
+
+    .i:nth-child(1) {
+      margin: 0;
+    }
+
+    .body {
+      width: inherit;
+      height: inherit;
+      background-color: hsl(270, 20%, 96%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 100px;
+    }
+
+    .recived {
+      max-width: 48%;
+      height: min-content;
+      background-color: hsl(278, 58%, 94%);
+      border-radius: 10px;
+      border-bottom-left-radius: 5px;
+      padding: 10px;
+      align-self: flex-start;
+      margin-left: 10px;
+      margin-bottom: 10px;
+      font-size: 0.6rem;
+      font-weight: 400;
+      color: hsl(276, 55%, 52%);
+    }
+
+    .pictures {
+      width: 58%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-self: flex-end;
+      align-items: center;
+      padding: 10px;
+      margin-left: 10px;
+      margin-bottom: 10px;
+    }
+
+    .pictures img {
+      width: 30%;
+      border-radius: 10px;
+    }
+
+    .sent {
+      max-width: 48%;
+      height: min-content;
+      background-color: hsl(0, 0%, 100%);
+      border-radius: 10px;
+      border-bottom-right-radius: 5px;
+      padding: 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font-size: 0.6rem;
+      font-weight: 400;
+      color: hsl(271, 15%, 43%);
+      align-self: flex-end;
+      box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.03);
+
+    }
+
+    .pay {
+      width: 68%;
+      height: 20px;
+      background: linear-gradient(45deg, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+      border-radius: 10px;
+      border-bottom-left-radius: 5px;
+      padding: 10px;
+      font-size: 0.6rem;
+      font-weight: 400;
+      color: hsl(0, 0%, 100%);
+      align-self: flex-start;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-left: 10px;
+      margin-bottom: 10px;
+
+    }
+
+    .pay p {
+      justify-self: flex-start;
+      font-weight: 300;
+    }
+
+    .pay span {
+      justify-self: flex-end;
+      margin-left: auto;
+      margin-right: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .radio {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: transparent;
+      border: 1px solid hsl(289, 100%, 72%);
+      margin-right: 10px;
+    }
+    .messager{
+      width: 85%;
+      height: 10px;
+      background-color: white;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 50px;
+      color: white;
+      box-shadow: 0px 5px 20px 10px rgba(0, 0, 0, 0.05);
+      padding: 5%;
+      padding-right: 2%;
+      margin: 10px 0px 10px 0px ;
+    }
+
+    input{
+      border: none;
+      font-size: 0.65rem;
+      margin-left: 10px;
+    }
+    input::placeholder{
+      
+      color: hsl(206, 6%, 79%);
+    }
+    .send{
+      width:15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color:hsl(271, 36%, 24%);
+      color: white;
+      padding: 2%;
+      position: relative;
+    }
+    .send .i{
+      position: absolute;
+      width: min-content;
+      height: min-content;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    .rb{
+      width: 40vw;
+      height: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-self: flex-end;
+    }
+    .rb h1{
+      font-size: 2.5rem;
+      font-weight: 500;
+      color: hsl(271, 36%, 24%);
+      margin-bottom: 10px;
+      
+    }
+    .rb p{
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: hsl(270, 7%, 64%);
+      line-height: 1.8rem;
+      max-width: 65%;
+    } 
+    .cool-rbg{
+      left: auto;
+      right: -10vw;
+      bottom: 0;
+      border-radius: 0;
+      border-top-left-radius: 500px;
+      border-top-right-radius: 500px;
+      z-index: -1;
+      background-color: hsla(276, 100%, 91%, 0.15);
+      background-image: none;
+    }
+    @media only screen and (width <= 1000px) {
+
+      body,html{
+        width: 100vw;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+
+      .cool-bg{
+        left: -350px;
+        height: 80%;
+      }
+
+      .mobile{
+        left: 0;
+        right: 0;
+        box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.15) ;
+      }
+
+      .rb{
+        position: absolute;
+        width: 90vw;
+        padding: 5vw;
+        align-items: center;
+        text-align: center;
+        height: min-content;
+        top: 100vh;
+      }
+
+      .rb p{
+        max-width: 90vw;
+      }
+
+      .cool-rbg{
+        left: auto;
+        top: 50vh;
+        right: -50vw;
+      }
+      
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="cool-bg"></div>
+  <div class="mobile">
+    <div class="action-bar">
+      <div class="notch"></div>
+      <div class="lb">
+        <i class="fi fi-br-angle-left i"></i>
+        <img src="./images/avatar.jpg" alt="avatar">
+        <div class="details">
+          <span class="name">Samuel Green</span>
+          <p class="status">Available to Walk</p>
+        </div>
+      </div>
+      <i class="fi fi-br-menu-dots-vertical i"></i>
+    </div>
+
+    <div class="body">
+      <span class="recived"> That sounds great. I’d be happy with that.</span>
+      <span class="recived">Could you send over some pictures of your dog, please?</span>
+      <div class="pictures">
+        <img src="./images/dog-image-1.jpg" alt="dog">
+        <img src="./images/dog-image-2.jpg" alt="dog">
+        <img src="./images/dog-image-3.jpg" alt="dog">
+      </div>
+      <span class="sent">Here are a few pictures. She’s a happy girl!</span>
+      <span class="sent">Can you make it?</span>
+      <span class="recived">She looks so happy! The time we discussed works. How long shall I take her out for?</span>
+      <div class="pay">
+        <div class="radio"></div>
+        <p>30 minute walk</p>
+        <span>$29</span>
+      </div>
+      <div class="pay">
+        <div class="radio"></div>
+        <p>1 hour walk</p>
+        <span>$49</span>
+      </div>
+      <div class="messager">
+        <input type="text" placeholder="Type a message...">
+        <div class="send">
+          <i class="fi fi-br-angle-right i"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rb">
+    <h1>Simple booking</h1>
+    <p>Stay in touch with our dog walkers through the chat interface. This makes it easy to
+      discuss arrangements and make bookings. Once the walk has been completed you can rate
+      your walker and book again all through the chat.</p>
+  </div>
+
+  <div class="cool-bg cool-rbg">
+
+  </div>
+  <p hidden>
+    Samuel Green
+    Available to Walk
+
+    That sounds great. I’d be happy with that.
+
+    Could you send over some pictures of your dog, please?
+
+    Here are a few pictures. She’s a happy girl!
+
+    Can you make it?
+
+    She looks so happy! The time we discussed works. How long shall I take her out for?
+
+    30 minute walk
+    $29
+
+    1 hour walk
+    $49
+
+    Type a message…
+
+    Simple booking
+
+    Stay in touch with our dog walkers through the chat interface. This makes it easy to
+    discuss arrangements and make bookings. Once the walk has been completed you can rate
+    your walker and book again all through the chat.
+  </p>
+</body>
+
+</html>
